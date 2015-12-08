@@ -311,6 +311,12 @@ var $ = require('jquery');
 
 $(document).ready(function () {
   var theCutestTimerEver = new _timer_controls2.default('#myTimer');
+  theCutestTimerEver.timer.on("finished", function () {
+    if ($("#ding").length > 0) {
+      $("#ding").trigger("load");
+      $("#ding").trigger("play");
+    }
+  });
 });
 
 },{"./timer_controls.es6":4,"jquery":5}],3:[function(require,module,exports){
@@ -353,11 +359,12 @@ var Timer = (function (_EventEmitter) {
       this.initValue = parseInt(this.input.val());
       if (Number.isNaN(this.initValue)) {
         this.initValue = 0;
-      } else {
+        this.input.val("");
+      } else if (this.initValue > 0) {
         this.counting = true;
+        this.actualNumber = this.initValue;
+        this.interval = window.setInterval(this.decreaseInput.bind(this), 1000);
       }
-      this.actualNumber = this.initValue;
-      this.interval = window.setInterval(this.decreaseInput.bind(this), 1000);
     }
   }, {
     key: 'pause',
@@ -368,7 +375,7 @@ var Timer = (function (_EventEmitter) {
   }, {
     key: 'decreaseInput',
     value: function decreaseInput() {
-      if (this.actualNumber == 0) {
+      if (this.actualNumber == 1) {
         this.input.val("");
         this.counting = false;
         this.myClearInterval();
@@ -423,7 +430,7 @@ var TimerControl = (function () {
   function TimerControl(timer) {
     _classCallCheck(this, TimerControl);
 
-    //timer, pauseUnpause and reset should be CSS selectors
+    //timer should be a CSS selector
     this.timer = new _timer2.default(timer);
     this.pauseUnpause = $("[data-action=\"pauseUnpause\"][data-control=\"" + timer + "\"]");
     this.reset = $("[data-action=\"reset\"][data-control=\"" + timer + "\"]");
@@ -431,7 +438,6 @@ var TimerControl = (function () {
     this.reset.click(this.resetHandler.bind(this));
     this.stopColor = "#CA5B7F";
     this.playColor = "#BA83CC";
-    this.audio = new Audio('./audio/finish.wav');
     this.timer.on("finished", this.finishHandler.bind(this));
   }
 
@@ -466,8 +472,6 @@ var TimerControl = (function () {
     key: "finishHandler",
     value: function finishHandler() {
       this.changeColor();
-      this.audio.play();
-      console.log("done");
     }
   }]);
 

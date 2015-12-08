@@ -11,13 +11,13 @@ body {
   text-align: center;
   margin-top: 70px; }
   .logo img {
-    max-width: 40%; }
+    max-width: 30%; }
     @media (max-width: 768px) {
       .logo img {
         max-width: 60%; } }
 
 .timer-container {
-  min-height: calc(100vh - 380px);
+  min-height: calc(100vh - 350px);
   margin-top: 70px;
   text-align: center; }
   .timer-container .btn-group {
@@ -27,24 +27,25 @@ body {
     background-color: transparent;
     max-width: 40%;
     line-height: 80px;
-    font-size: 70px;
+    font-size: 50px;
     border-bottom: #BFB4C3 1px solid;
     text-align: center;
     font-family: "Raleway", sans-serif;
     color: #BFB4C3; }
     @media (max-width: 768px) {
       .timer-container input {
-        max-width: 80%; } }
+        max-width: 80%;
+        font-size: 28px; } }
     .timer-container input:focus {
       border: none; }
 
 .btn {
   font-family: "Open Sans", sans-serif;
-  padding: 10px 16px;
-  font-size: 18px;
+  padding: 10px 20px;
+  font-size: 24px;
   border: none;
   background-color: whitesmoke;
-  margin: 0 4px;
+  margin: 0 8px;
   color: #312434; }
   .btn.btn-toggle {
     background-color: #BA83CC;
