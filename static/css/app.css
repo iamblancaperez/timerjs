@@ -9,7 +9,11 @@ body {
 
 .logo {
   text-align: center;
-  margin-top: 70px; }
+  margin-top: 70px;
+  font-family: "Raleway", sans-serif;
+  color: #BFB4C3; }
+  .logo a {
+    color: #BFB4C3; }
   .logo img {
     max-width: 30%; }
     @media (max-width: 768px) {

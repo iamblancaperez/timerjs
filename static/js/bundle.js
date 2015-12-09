@@ -313,6 +313,7 @@ $(document).ready(function () {
   var theCutestTimerEver = new _timer_controls2.default('#myTimer');
   theCutestTimerEver.timer.on("finished", function () {
     if ($("#ding").length > 0) {
+      $("#ding").trigger("load");
       $("#ding").trigger("play");
     }
   });

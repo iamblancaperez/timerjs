@@ -21,6 +21,11 @@ body{
 .logo{
   text-align: center;
   margin-top: 70px;
+  font-family: $font-raleway;
+  color: $light-purple;
+  a{
+    color: $light-purple;
+  }
   img{
     max-width: 30%;
     @media (max-width: 768px) {
