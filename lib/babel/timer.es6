@@ -13,18 +13,19 @@ class Timer extends EventEmitter{
     this.initValue = parseInt(this.input.val())
     if(Number.isNaN(this.initValue)) {
       this.initValue = 0
-    }else{
+      this.input.val("")
+    }else if( this.initValue>0){  
       this.counting = true
+      this.actualNumber = this.initValue   
+      this.interval = window.setInterval(this.decreaseInput.bind(this), 1000)   
     }
-    this.actualNumber = this.initValue   
-    this.interval = window.setInterval(this.decreaseInput.bind(this), 1000)
   }
   pause(){
     this.counting = false
     this.myClearInterval()
   }
   decreaseInput() {
-    if(this.actualNumber == 0){
+    if(this.actualNumber == 1){
       this.input.val("")
       this.counting = false
       this.myClearInterval()

@@ -11,7 +11,7 @@
     <img src="img/timer-logo-big-2.png" alt="TimerJS">
   </header>
   <section class="timer-container">
-    <input type="text" placeholder="seconds" id="myTimer">
+    <input type="number" placeholder="How many seconds?" id="myTimer" min="0">
     <div class="btn-group">
       <button class="btn btn-toggle" data-control="#myTimer" data-action="pauseUnpause">Start</button>
       <button class="btn btn-reset" data-control="#myTimer" data-action="reset">Reset</button>
@@ -25,6 +25,7 @@
       Hourglass graphic by <a href="http://www.danielbruce.se">Daniel Bruce</a> from <a href="http://www.flaticon.com/">Flaticon</a> is licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a>. Made with <a href="http://logomakr.com" title="Logo Maker">Logo Maker</a>
     </div>
   </footer>
+  <audio src="audio/finish.wav" preload="auto" id="ding"/>
 	<script src="js/bundle.js"></script>
 </body>
 </html>

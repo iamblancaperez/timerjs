@@ -3,7 +3,7 @@ import Timer from "./timer.es6"
 
 class TimerControl {
   constructor(timer) {
-    //timer, pauseUnpause and reset should be CSS selectors
+    //timer should be a CSS selector
     this.timer = new Timer(timer)
     this.pauseUnpause = $(`[data-action="pauseUnpause"][data-control="${timer}"]`)
     this.reset = $(`[data-action="reset"][data-control="${timer}"]`)
@@ -11,7 +11,6 @@ class TimerControl {
     this.reset.click(this.resetHandler.bind(this))
     this.stopColor = "#CA5B7F"
     this.playColor = "#BA83CC"
-    this.audio = new Audio('./audio/finish.wav')
     this.timer.on("finished", this.finishHandler.bind(this))
   }
   pauseUnpauseHandler(){
@@ -37,7 +36,6 @@ class TimerControl {
   }
   finishHandler(){
     this.changeColor()
-    this.audio.play()
   }
 }
 

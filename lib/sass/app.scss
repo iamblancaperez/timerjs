@@ -22,15 +22,14 @@ body{
   text-align: center;
   margin-top: 70px;
   img{
-    max-width: 40%;
+    max-width: 30%;
     @media (max-width: 768px) {
       max-width: 60%;
     }
-  }
-  
+  }  
 }
 .timer-container{
-  min-height: calc(100vh - 380px);
+  min-height: calc(100vh - 350px);
   margin-top: 70px;
   text-align:center;
   .btn-group{
@@ -41,9 +40,10 @@ body{
     background-color: transparent;
     max-width: 40%; 
     line-height: 80px;
-    font-size: 70px;
+    font-size: 50px;
     @media (max-width: 768px) {
       max-width: 80%;
+      font-size: 28px;
     }
     border-bottom: $light-purple 1px solid;
     text-align:center;
@@ -57,11 +57,11 @@ body{
 
 .btn{
   font-family: $font-open-sans;
-  padding: 10px 16px;
-  font-size: 18px;
+  padding: 10px 20px;
+  font-size: 24px;
   border: none;
   background-color: whitesmoke;
-  margin: 0 4px;
+  margin: 0 8px;
   color: $dark-purple;
   &.btn-toggle{
     background-color: $purple-color;
