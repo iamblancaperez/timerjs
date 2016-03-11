@@ -1,5 +1,7 @@
 # timerjs
 
+Timer JS by @onlyblank
+
 *CSS*
 
 ```
